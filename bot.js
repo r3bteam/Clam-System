@@ -195,7 +195,7 @@ client.on('message', async message => {
     }
 })
 client.on('message', message => {
-  var prefix = "+";
+  var prefix = "-";
   const guild = message.guild;
 
   if (message.author.codes) return;
