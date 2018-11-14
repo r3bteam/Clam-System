@@ -114,7 +114,7 @@ message.channel.send(voted)
 }
 });
 
-const devs = ["450711003324350485"]
+const devs = ["479090634813341696"]
 
 const adminprefix = "-";
 client.on('message', message => {
