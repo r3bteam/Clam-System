@@ -281,4 +281,14 @@ client.on("guildMemberAdd", m => {
         return Math.round((second-first)/(1000*60*60*24));
     };
 });
+
+
+client.on('voiceStateUpdate', (old, now) => {
+  const channel = client.channels.get('513445764983291914');
+  const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
+  const size = channel.name.match(/\[\s(\d+)\s\]/);
+  if (!size) return channel.setName(`Infinity Voice : ${currentSize}`);
+  if (currentSize !== size) channel.setName(`Infinity Voice : ${currentSize}`);
+});
+
             client.login(process.env.BOT_TOKEN);
