@@ -156,7 +156,7 @@ client.on('message', message => {
   });
 
 client.on('guildMemberAdd', (member) => {
-member.addRole(member.guild.roles.find('name', 'Clam'));
+member.addRole(member.guild.roles.find('name', 'Horror'));
 });
 
 client.on('message', async message => {
@@ -257,31 +257,14 @@ guild.owner.send(`سيرفر : ${guild.name}
         });
     }, 1000);
   });
-const moment = require("moment")
-client.on("guildMemberAdd", m => {
-        let room = m.guild.channels.find(a => a.name === 'clam'); //
-    if (datediff(parseDate(moment(m.user.createdTimestamp).format('l')), parseDate(moment().format('l'))) < 8) {
-        m.ban() .then((
-            room.send(`**:no_entry: | ${m} Has been banned for: \`fake\`**`)
-        ));
-    };
-    function parseDate(str) {
-        var mdy = str.split('/');
-        return new Date(mdy[2], mdy[0]-1, mdy[1]);
-    };
-    
-    function datediff(first, second) {
-        return Math.round((second-first)/(1000*60*60*24));
-    };
-});
 
 
 client.on('voiceStateUpdate', (old, now) => {
   const channel = client.channels.get('513445764983291914');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
   const size = channel.name.match(/\[\s(\d+)\s\]/);
-  if (!size) return channel.setName(`Infinity Voice : ${currentSize}`);
-  if (currentSize !== size) channel.setName(`Infinity Voice : ${currentSize}`);
+  if (!size) return channel.setName(`Horror Voice : ${currentSize}`);
+  if (currentSize !== size) channel.setName(`Horror Voice : ${currentSize}`);
 });
 
             client.login(process.env.BOT_TOKEN);
