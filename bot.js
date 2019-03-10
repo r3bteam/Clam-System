@@ -359,7 +359,7 @@ guild.owner.send(`سيرفر : ${guild.name}
 
 
 client.on('voiceStateUpdate', (old, now) => {
-  const channel = client.channels.get('513445764983291914');
+  const channel = client.channels.get('554423259115028481');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
   const size = channel.name.match(/\[\s(\d+)\s\]/);
   if (!size) return channel.setName(`Horror Voice : ${currentSize}`);
